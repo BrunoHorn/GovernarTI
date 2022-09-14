@@ -1,0 +1,23 @@
+create table spring_results(
+id bigserial primary key,
+result_id bigint  ,
+race_id bigint ,
+driver_id bigint ,
+constructor_id bigint ,
+number bigint ,   
+grid bigint ,
+position varchar(20),
+position_text varchar (10),
+position_order bigint ,
+points bigint ,
+laps bigint ,
+time   varchar(20),
+milliseconds  varchar(20),
+fastest_lap  varchar(20),
+fastest_lap_time varchar(20), 
+status_id  bigint ,
+ constraint fk_races_springResults foreign key (race_id) references races (id),
+ constraint fk_constructors_springResults foreign key (constructor_id) references constructors (id),
+ constraint fk_driver_springResults foreign key (driver_id) references drivers (id),
+  constraint fk_status_springResults foreign key (status_id) references status (id)
+)

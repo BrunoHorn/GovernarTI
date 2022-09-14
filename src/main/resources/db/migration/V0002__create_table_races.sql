@@ -1,0 +1,22 @@
+create table races (
+		id bigint  ,
+		year  int ,
+    round int,
+    circuit_id  bigint,
+    name    varchar (100),
+    date  varchar (100),
+    time  varchar (10),
+    url varchar(150),
+    fp1_date varchar(100),
+    fp1_time varchar(100),
+    fp2_date varchar(100),
+    fp2_time varchar(100),
+    fp3_date varchar(100),
+    fp3_time varchar(100),
+    quali_date varchar(100),
+    quali_time varchar(100),
+    sprint_date varchar(100),
+		sprint_time varchar(100),
+		primary key (Id),
+    constraint fk_circuit_races foreign key (circuit_id) references circuits (id)
+);
